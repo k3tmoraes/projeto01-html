@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <style>
+        label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: rgba(128, 0, 128, 0.76);
+            display: block;
+            margin: 10px 0;
+        }
+
+        input,
+        textarea {
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input[type=submit] {
+            background: plum;
+            color: #fff;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background: rgb(95, 73, 95);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formulários em HTML</h1>
+
+    <!-- Form de contato: Início -->
+
+    <form name="contato" method="post" action="contato.php">
+        <fieldset>
+            <legend>Formulário de Contato </legend>
+            <div>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" placeholder="Digite seu Nome" required />
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite seu email" required="true" />
+            </div>
+
+            <div>
+                <label for="msn">Mensagem:</label>
+                <textarea rows="5" id="msn" placeholder="Digite algo" required="true"></textarea>
+            </div>
+
+            <div>
+                <input type="submit" value="Enviar Contato" />
+            </div>
+        </fieldset>
+    </form>
+    <!-- Form de contato: Fim -->
+
+
+    <!-- Form de Login: Início -->
+    <form name="login" id="login-form" method="post" action="login.php">
+        <fieldset>
+            <legend>Login</legend>
+
+            <div>
+                <label for="user">Usuário:</label>
+                <input type="text" id="user" placeholder="Seu Login" required="true" />
+            </div>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" placeholder="Sua Senha" size="8" maxlength="15" required="true" />
+
+            <div>
+                <input type="submit" value="Entrar no Sistema" required="true" />
+            </div>
+        </fieldset>
+    </form>
+    <!-- Form de Login: Fim -->
+
+    <!-- Form de Cadastro: Início -->
+    <form name="cadastro" id="cadastro" method="post" action="cadastro.php">
+        <fieldset>
+            <legend>Cadastro</legend>
+
+            <div>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" placeholder="Nome" required="true" />
+            </div>
+
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email" required />
+            </div>
+
+
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" placeholder="00-00000-0000" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required="true" title="Digite no formato 00-00000-0000"/>
+            </div>
+
+
+            <div>
+                <label for="genero">Gênero:</label>
+                <input type="radio" name="genero" id="masculino"/><span>Masculino</span>
+                <input type="radio" name="genero" id="feminino"/><span>Feminino</span>
+                <input type="radio" name="genero" id="outro"/><span>Outro</span>
+            </div>
+
+
+            <div>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" placeholder="Endereço" required="true"/>
+
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" placeholder="Cidade" required="true"/>
+
+                <label for="estado">Estado</label>
+                <select id="estado">
+
+                    <option value="">Selecione o Estado</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="PR">Paraná</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </select>
+
+                <label for="cep">CEP:</label>
+                <input type="text" pattern="[0-9]{5}-[0-9]{3}" placeholder="CEP" required="true"/>
+            </div>
+
+
+            <div>
+                <label for="CPF">CPF</label>
+                <input type="text" placeholder="000.000.000-00" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{2}" required="true"/>
+            </div>
+
+
+            <div>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" required="true">
+            </div>
+
+
+            <div>
+                <label>Área(s) de Interesse</label>
+                <input type="checkbox" name="games"/> <span>Games</span>
+                <input type="checkbox" name="web"/> <span>Web</span>
+                <input type="checkbox" name="desing"/> <span>Desing</span>
+                <input type="checkbox" name="IA"/> <span>Inteligência Artificial</span>
+            </div>
+
+
+            <div>
+                <label>Anexe seu Currículo</label>
+                <input type="file"/>
+            </div>
+
+
+            <div>
+                <label>Observações Adicionais:</label>
+                <textarea row="5" placeholder="Digite aqui a OBS;"></textarea>
+            </div>
+
+
+            <div>
+                <input type="submit" value="Cadastrar"/>
+            </div>
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
